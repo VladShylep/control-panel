@@ -1,0 +1,267 @@
+:root {
+  --color-gray: #eff1f3;
+  --color-red: #b11a33;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 14px;
+}
+
+p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+input,
+textarea,
+select {
+  height: 36px;
+  border: none;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  background-color: white;
+}
+
+input:disabled {
+  opacity: 0.6;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 2px 25px 2px 2px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.input-container > input,
+.input-container > textarea,
+.input-container > select {
+  width: 100%;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid white;
+  padding-top: 10px;
+}
+
+.date-container > input:nth-child(2) {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.summary > .date-container {
+  border-top: none !important;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio-container > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container > label {
+  margin-left: 5px;
+}
+
+.checkbox-container > .tooltip-info {
+  margin-left: auto;
+}
+
+input[type="date"] {
+  width: 160px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  height: calc(100vh - 20px);
+  margin-top: 20px;
+}
+
+.description,
+.conditions {
+  background-color: var(--color-gray);
+  padding: 10px 30px;
+  border-right: 2px solid white;
+}
+
+.steps {
+  margin-left: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-gray);
+  border-radius: 0;
+  border: 2px solid white;
+  border-top-left-radius: 100rem;
+  border-bottom-left-radius: 100rem;
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  counter-increment: button 1;
+  cursor: pointer;
+}
+
+.step.step-active {
+  border-right: none;
+}
+
+.step.step-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.step .tooltip-info {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.step::before {
+  content: counter(button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 38px;
+  background-color: #666666;
+  border-radius: 100%;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.step.step-active::before {
+  background-color: var(--color-red);
+}
+
+.title-required {
+  color: var(--color-red);
+  font-size: 12px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid white;
+  height: 40px;
+  padding: 0 0 5px 0;
+  margin-bottom: 30px;
+}
+
+.description-content,
+.conditions-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tooltip-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 12px;
+  width: 12px;
+  color: white;
+  background-color: var(--color-red);
+  border-radius: 100%;
+  position: relative;
+}
+
+.tooltip-info:before {
+  content: "\2139";
+  font-size: 12px;
+}
+
+.tooltip-content {
+  display: none;
+}
+
+.tooltip-info:hover > .tooltip-content {
+  content: attr(data-text) " ";
+  position: absolute;
+  top: 20px;
+  transform: translateX(-50%);
+  left: 50%;
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 10px;
+}
+
+.summary {
+  display: none;
+  background-color: var(--color-gray);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary button {
+  border: none;
+  width: 50%;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+  width: 300px;
+}

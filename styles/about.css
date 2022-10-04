@@ -1,0 +1,40 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.about__list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.about__item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.about__item h2 {
+  display: flex;
+  align-items: center;
+  line-height: 1.25;
+  counter-increment: bullet;
+  color: var(--color-black);
+}
+
+.about__item h2::before {
+  margin-right: 15px;
+  content: "0" counter(bullet);
+  font-size: 64px;
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+.about__item p {
+  line-height: 1.38;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Strona</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="steps">
+        <button class="step step-active" id="step-1">Definition</button>
+        <button class="step step-disabled" id="step-2">Choose products</button>
+        <button class="step step-disabled" id="step-3">Exclude products</button>
+        <button class="step step-disabled" id="step-4">
+          <span class="step-text">Bonus products</span>
+          <div class="tooltip-info">
+            <div class="tooltip-content">lorem ipsum</div>
+          </div>
+        </button>
+        <button class="step step-disabled" id="step-5">
+          <span class="step-text">Products limits</span>
+          <div class="tooltip-info">
+            <div class="tooltip-content">lorem ipsum</div>
+          </div>
+        </button>
+        <button class="step step-disabled" id="step-6">Choose clients</button>
+        <button class="step step-disabled" id="step-7">Exclude clients</button>
+        <button class="step step-disabled" id="step-8">Clients limits</button>
+        <button class="step step-disabled" id="step-9">Summary</button>
+      </div>
+      <div class="description">
+        <div class="title">
+          <h3>Description</h3>
+          <span class="title-required">* is required</span>
+        </div>
+        <div class="description-content">
+          <div class="input-container">
+            <input
+              type="text"
+              placeholder="Marketing name"
+              id="marketing-name"
+              required
+            />
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              placeholder="Technical name"
+              id="technical-name"
+              required
+            />
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="input-container">
+            <textarea placeholder="Description"></textarea>
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div>
+            <div class="title">
+              <h3>Catalog promotion tutorial:</h3>
+            </div>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              consequuntur dolores non? Maxime, expedita possimus praesentium
+              voluptate adipisci numquam error vel aperiam? Facilis, asperiores
+              voluptate. Commodi assumenda error ex voluptatibus?
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              consequuntur dolores non? Maxime, expedita possimus praesentium
+              voluptate adipisci numquam error vel aperiam? Facilis, asperiores
+              voluptate. Commodi assumenda error ex voluptatibus?
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              consequuntur dolores non? Maxime, expedita possimus praesentium
+              voluptate adipisci numquam error vel aperiam? Facilis, asperiores
+              voluptate. Commodi assumenda error ex voluptatibus?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="conditions">
+        <div class="title">
+          <h3>Conditions</h3>
+          <span class="title-required">* is required</span>
+        </div>
+        <div class="conditions-content">
+          <div class="input-container">
+            <select required>
+              <option value="" disabled selected>Portal</option>
+              <option value="name-1">name 1</option>
+              <option value="name-2">name 2</option>
+              <option value="name-3">name 3</option>
+            </select>
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="input-container">
+            <select required>
+              <option value="" disabled selected>Type</option>
+              <option value="name-1">name 1</option>
+              <option value="name-2">name 2</option>
+              <option value="name-3">name 3</option>
+            </select>
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="input-container">
+            <input type="text" placeholder="Benefit amount" disabled />
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="date-container">
+            <input type="date" required />
+            <input type="date" />
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div class="radio-container">
+            <div>
+              <input type="radio" name="radio" />
+              <label for="radio">Business conditions</label>
+            </div>
+            <div>
+              <input type="radio" name="radio" />
+              <label for="radio">Base price 100%</label>
+            </div>
+            <div class="tooltip-info">
+              <div class="tooltip-content">lorem ipsum</div>
+            </div>
+          </div>
+          <div>
+            <div class="checkbox-container">
+              <input type="checkbox" name="promotion_connect" />
+              <label for="promotion_connect"
+                >Connect wiith other promotions</label
+              >
+              <div class="tooltip-info">
+                <div class="tooltip-content">lorem ipsum</div>
+              </div>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" name="back_promotion" />
+              <label for="back_promotion">Back promotion</label>
+              <div class="tooltip-info">
+                <div class="tooltip-content">lorem ipsum</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <input type="text" id="marketing-name" placeholder="Marketing Name" />
+        <div class="buttons-container">
+          <button id="edit">Edit ✏️</button>
+          <button id="delete">Delete &#128465;</button>
+        </div>
+        <div class="date-container">
+          <input type="date" />
+          <input type="date" />
+        </div>
+      </div>
+    </main>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__header {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero__content {
+  display: flex;
+  margin-top: 32px;
+  gap: 32px;
+}
