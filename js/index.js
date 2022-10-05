@@ -1,18 +1,16 @@
 $(document).ready(() => {
   const data = getLocalStorageData("data");
 
-  handleStep();
-
   $("#marketing-name").val(data.marketingName);
   $("#technical-name").val(data.technicalName);
-
+  handleStep();
   toggleSteps(data);
 
   handleMarketingNameInput();
   handleTechnicalNameInput();
-  $("#step-2").click(function(){
-    window.location.href = "ulotka.html"
-  }); 
+  $("#step-2").click(function () {
+    window.location.href = "ulotka.html";
+  });
 });
 
 const handleMarketingNameInput = () => {
@@ -43,23 +41,29 @@ const handleTechnicalNameInput = () => {
 
 const getLocalStorageData = (key) => {
   const data = localStorage.getItem(key);
-  const parsedData = JSON.parse(data);
 
-  return parsedData;
+  if (!data) {
+    const initStore = { marketingName: "", technicalName: "" };
+    localStorage.setItem("data", JSON.stringify(initStore));
+    return initStore;
+  }
+
+  return JSON.parse(data);
 };
 
 const toggleSteps = (data) => {
   if (data.technicalName || data.marketingName) {
     $(".step").each((index, el) => {
       if ($(el).hasClass("step-disabled")) {
-        $(".step").removeClass("step-disabled").prop('disabled', false);
+        $(".step").removeClass("step-disabled").prop("disabled", false);
       }
     });
   } else {
     $(".step").each((index, el) => {
-      if ($(el).hasClass("step-disabled")) return $("#step-1").removeClass("step-disabled");
+      if ($(el).hasClass("step-disabled"))
+        return $("#step-1").removeClass("step-disabled");
 
-      $(".step").addClass("step-disabled").prop('disabled', true);
+      $(".step").addClass("step-disabled").prop("disabled", true);
     });
   }
 };
